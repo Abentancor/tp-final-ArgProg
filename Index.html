@@ -9,17 +9,23 @@
     <title>Tp-Final</title>
 </head>
 <body>
-    
+    <header class="bg-sky-500 p-4 text-white flex justify-around">
+        <a href="#">Logo nombre empresa</a>
+      <nav class="flex gap-6 ">
+        <a href="#contactForm">Nuestro Equipo</a>
+        <a href="#contactForm">Contacto</a>
+        <a href="#contactForm">Formulario de proceso</a>
+      </nav>
+    </header>
 
-
-    <form class="grid w-1/4 gap-2 m-auto border-4 rounded-xl p-4" id="formulario">
-       
+  <div class="w-2/3 m-auto sm:flex" id="contactForm">
+    <form class="grid w-full p-4 my-2 "  id="formulario" autocomplete="off">
         <label for="nombre">Nombre</label>
-        <input class="px-4 py-2" type="text" id="nombre" placeholder="Joe">
+        <input class="px-4 py-2 my-2" type="text" id="nombre" name="nombre" placeholder="Joe">
         <p class="font-semibold text-red-500" id="error_nombre"></p>
 
         <label for="apellido">Apellido</label>
-        <input class="px-4 py-2" type="text" id="apellido" placeholder="Doe">
+        <input class="px-4 py-2 my-2" type="text" id="apellido" placeholder="Doe">
         <p class="font-semibold text-red-500" id="error_apellido"></p>
     
         <label for="email">E-mail</label>
@@ -27,19 +33,21 @@
         <p class="font-semibold text-red-500" id="error_email"></p>
 
         <label for="direccion">Direccion</label>
-        <input class="px-4 py-2" type="text" id="direccion" placeholder="San Martin 123">
+        <input class="px-4 py-2 my-2" type="text" id="direccion" placeholder="San Martin 123">
         <p class="font-semibold text-red-500" id="error_direccion"></p>
     
         <label for="telefono">Telefono</label>
-        <input class="px-4 py-2" type="text" id="telefono" placeholder="0000-000000">
+        <input class="px-4 py-2 my-2" type="text" id="telefono" placeholder="0000000000">
         <p class="font-semibold text-red-500" id="error_telefono"></p>
     
         <label for="consulta">Consulta</label>
-        <textarea class="px-4 py-2 resize-none h-fit" id="consulta" placeholder="Su consulta aqui"></textarea>
+        <textarea class="px-4 py-2 my-2 resize-none h-fit" id="consulta" placeholder="Su consulta aqui"></textarea>
         <p class="font-semibold text-red-500" id="error_consulta"></p>
     
-        <button type="submit" id="enviar">Enviar</button>
+        <button class="px-4 bg-[#056BF5]  p-3 rounded-lg text-white hover:bg-[#006DFE] w-1/2 m-auto" type="submit" id="enviar">Enviar</button>
     </form>
+    <img class="sm:w-1/2 " src="images/faqsImage.jpeg" alt="">
+  </div>
 
     <div class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center z-50 hidden">
         <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
@@ -60,14 +68,20 @@
             <p>¡Su consulta ha sido enviada con éxito!</p>
             
             <div class="flex justify-evenly gap-2 pt-2">
-              <button class="px-4 bg-rose-900 p-3 rounded-lg text-white hover:bg-rose-700" id="generar_pdf">Generar PDF</button>
-              <button class="modal-close px-4 bg-gray-900 p-3 rounded-lg text-white hover:bg-gray-700">Cerrar</button>
+              <button class="px-4 bg-lime-700 p-3 rounded-lg text-white hover:bg-lime-400" id="generar_pdf">Generar PDF</button>
+              <button class="modal-close px-4 bg-slate-900 p-3 rounded-lg text-white hover:bg-slate-700">Cerrar</button>
             </div>
             
           </div>
         </div>
       </div>
     </div>
+
+
+
+    <footer class="bg-blue-900 text-white h-20 absolute w-full bottom-0">
+        <p class="text-center">Copyright</p>
+    </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>

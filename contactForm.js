@@ -9,31 +9,42 @@ $(document).ready(function() {
 
         var reglasValidacion = {
             nombre: {
-                presence: true
+                presence: {
+                    message: "El campo Nombre es requerido"
+                }
             },
             apellido: {
-                presence: true
+                presence: {
+                    message: "El campo Apellido es requerido"
+                }
+            },
+            direccion: {
+                presence: {
+                    message: "El campo Dirección es requerido"
+                }
             },
             email: {
-                presence: true,
+                presence: {
+                    message: "El campo Email es requerido"
+                },
                 email: {
                     message: "Debe ingresar un correo electrónico válido"
                 }
             },
-            direccion: {
-                presence: true
-            },
             telefono: {
-                presence: true,
+                presence: {
+                    message: "El campo Teléfono es requerido"
+                },
                 format: {
-                    pattern: "[0-9]+(-[0-9]+)+",
+                    pattern: "[0-9]+([0-9]+)+",
                     message: "Ingrese un número de teléfono válido (0000-000000)"
                 }
             },
             mensaje: {
-                presence: true
+                presence: false
             }
         };
+        
 
         var valoresCampos = {
             nombre: $("#nombre").val(),
@@ -47,39 +58,12 @@ $(document).ready(function() {
         var errores = validate(valoresCampos, reglasValidacion);
 
         if (errores) {
-            if (errores.nombre) {
-                $("#error_nombre").html(errores.nombre[0]);
-            } else {
-                $("#error_nombre").html("");
-            }
-            if (errores.apellido) {
-                $("#error_apellido").html(errores.apellido[0]);
-            } else {
-                $("#error_apellido").html("");
-            }
-            if (errores.direccion) {
-                $("#error_direccion").html(errores.direccion[0]);
-            } else {
-                $("#error_direccion").html("");
-            }
-
-            if (errores.email) {
-                $("#error_email").html(errores.email[0]);
-            } else {
-                $("#error_email").html("");
-            }
-
-            if (errores.telefono) {
-                $("#error_telefono").html(errores.telefono[0]);
-            } else {
-                $("#error_telefono").html("");
-            }
-
-            if (errores.mensaje) {
-                $("#mensaje").html(errores.mensaje[0]);
-            } else {
-                $("#mensaje").html("");
-            }
+            $("#error_nombre").html(errores.nombre ? errores.nombre[0] : "");
+            $("#error_apellido").html(errores.apellido ? errores.apellido[0] : "");
+            $("#error_direccion").html(errores.direccion ? errores.direccion[0] : "");
+            $("#error_email").html(errores.email ? errores.email[0] : "");
+            $("#error_telefono").html(errores.telefono ? errores.telefono[0] : "");
+            $("#mensaje").html(errores.mensaje ? errores.mensaje[0] : "");
         } else {
             enviarFormulario(valoresCampos);
             mostrarModalExito();
@@ -87,6 +71,7 @@ $(document).ready(function() {
         }
     });
 });
+
 
 var consulta_id = Date.now().toString();
 
