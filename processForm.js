@@ -1,18 +1,19 @@
 $(document).ready(function() {
-    function calcularPrecioTotal() {
-        var cantidadPaginas = parseInt($('#cantidad').val());
-        var precioPagina = parseInt($('#precio-pagina').text().replace('$', ''));
-        var precioPaginasTotal = precioPagina * cantidadPaginas;
-        var precioFormulario = ($('#form').is(':checked') && cantidadPaginas >= 2) ? 0 : cantidadPaginas == 1 ? 2000 : 0;
-        if (precioFormulario > 0) {
-          precioPaginasTotal += precioFormulario;
-        }
-        var total = precioPaginasTotal;
-        console.log('total', total)
-        $('#precio_formulario').text('$' + precioFormulario);
-        $('#precio_paginas_total').text('$' + precioPaginasTotal);
-        $('#total').text('Total: $' + total);
-      }
+  function calcularPrecioTotal() {
+    var cantidadPaginas = parseInt($('#cantidad').val());
+    var precioPagina = parseInt($('#precio-pagina').text().replace('$', ''));
+    var precioPaginasTotal = precioPagina * cantidadPaginas;
+    var tieneFormulario = $('#check').is(':checked');
+    var valorFormulario = tieneFormulario && cantidadPaginas >= 2 ? 0 : tieneFormulario ? 2000 : 0;
+    if (valorFormulario > 0) {
+      precioPaginasTotal += valorFormulario;
+    }
+    var total = precioPaginasTotal;
+    console.log('total', total)
+    $('#precio_formulario').text('$' + valorFormulario);
+    $('#precio_paginas_total').text('$' + precioPaginasTotal);
+    $('#total').text('Total: $' + total);
+  }
   
     function validarNombrePagina() {
         var constraints = {
@@ -44,6 +45,10 @@ $(document).ready(function() {
         }
       }
     
+    $('#check').on('change', function() {
+      calcularPrecioTotal();
+    });
+
     $('#cantidad').on('input', function() {
       calcularPrecioTotal();
     });
