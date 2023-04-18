@@ -94,6 +94,24 @@ function enviarFormulario(valoresCampos) {
     };
     emailjs.send(service_id, template_id, template_params);
     console.log('mensaje enviado')
+
+    $.ajax({
+        url: 'https://reqres.in/api/users?page=2', 
+        method: 'POST',
+        data: {
+            nombre: valoresCampos.nombre,
+            email: valoresCampos.email,
+            mensaje: valoresCampos.mensaje
+        },
+        success: function(response) {
+            console.log('Éxito:', response);
+            alert('¡Mensaje enviado con éxito!');
+        },
+        error: function(xhr, status, error) {
+            console.error('Error:', error);
+            alert('Error al enviar el mensaje. Por favor inténtelo nuevamente.');
+        }
+    });
 }
 
 function mostrarModalExito() {
@@ -142,3 +160,5 @@ $("#generar_pdf").click(function() {
     
     pdfMake.createPdf(docDefinition).download('consulta_' + consulta_id + '.pdf');
   });
+
+  
