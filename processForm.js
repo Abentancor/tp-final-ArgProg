@@ -70,7 +70,7 @@ $(document).ready(function() {
       
               var nombrePagina = $('#nombre-pagina').val();
               var cantidadPaginas = $('#cantidad').val();
-              var formulario = $('#form:checked').val() || 'No';
+              var formulario = $('#check:checked').val() ? 'Si' : 'No';
               var total = $('#total').text();
             
               var docDefinition = {

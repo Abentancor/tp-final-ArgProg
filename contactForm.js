@@ -146,9 +146,7 @@ $("#generar_pdf").click(function() {
     var docDefinition = {
       content: [
         { text: 'Consulta', style: 'header' },
-        {text: 'Cliente:' + valoresCampos.nombre + ',' + valoresCampos.apellido},
         { text: 'Hora: ' + data.hora },
-        {text: 'mensaje:' + valoresCampos.mensaje},
         { text: 'ID consulta: ' + data.id_consulta }
       ],
       styles: {
