@@ -9,32 +9,38 @@ $(document).ready(function() {
 
         var reglasValidacion = {
             nombre: {
-                presence: {
-                    message: "El campo Nombre es requerido"
-                }
+                presence: true,
+                length: {
+                    minimum: 1,
+                    message: "el campo es requerido"
+                  },
             },
             apellido: {
-                presence: {
-                    message: "El campo Apellido es requerido"
-                }
+                presence: true,
+                length: {
+                    minimum: 1,
+                    message: "el campo es requerido"
+                  },
             },
             direccion: {
-                presence: {
-                    message: "El campo Dirección es requerido"
-                }
+                presence: false
             },
             email: {
-                presence: {
-                    message: "El campo Email es requerido"
-                },
+                presence: true,
+                length: {
+                    minimum: 1,
+                    message: "el campo es requerido"
+                  },
                 email: {
                     message: "Debe ingresar un correo electrónico válido"
                 }
             },
             telefono: {
-                presence: {
-                    message: "El campo Teléfono es requerido"
-                },
+                presence: true,
+                length: {
+                    minimum: 1,
+                    message: "el campo es requerido"
+                  },
                 format: {
                     pattern: "[0-9]+([0-9]+)+",
                     message: "Ingrese un número de teléfono válido (0000-000000)"

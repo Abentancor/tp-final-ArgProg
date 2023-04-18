@@ -20,6 +20,7 @@
 
   <div class="w-2/3 m-auto sm:flex" id="contactForm">
     <form class="grid w-full p-4 my-2 "  id="formulario" autocomplete="off">
+      
         <label for="nombre">Nombre</label>
         <input class="px-4 py-2 my-2" type="text" id="nombre" name="nombre" placeholder="Joe">
         <p class="font-semibold text-red-500" id="error_nombre"></p>
@@ -77,9 +78,30 @@
       </div>
     </div>
 
+    <section class="w-2/3 bg-gray-900 m-auto sm:flex" id="processForm">
+      <form class="grid p-4 my-2 " id="form" autocomplete="off">
+
+        <label for="nombre">Nombre de su nueva página</label>
+        <input type="text" id="nombre-pagina" placeholder="www.mi-página.com.ar">
+        <p id="erroresPagina"></p>
+
+        <label for="cantidad">Cantidad de páginas</label>
+        <input type="number" id="cantidad" min="1" value="1">
+        <span id="precio-pagina">$5000</span>
+
+        <label for="form">Formulario de Contacto?</label>
+        <input type="checkbox" id="form" name="form" value="1">
+        <span id="precio_formulario">$2000</span>
+        <p>Si, tiene mas de una Página el Formulario no tiene costo</p>
+        <span id="total">Total $</span>
+
+        <button type="submit" id="submit">Imprimir Presupuesto</button>
+      </form>
+    </section>
 
 
-    <footer class="bg-blue-900 text-white h-20 absolute w-full bottom-0">
+
+    <footer class="bg-blue-900 text-white h-20 text-center mt-4
         <p class="text-center">Copyright</p>
     </footer>
 </body>
@@ -90,5 +112,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/vfs_fonts.js"></script>
 
 <script src="contactForm.js"></script>
+<script src="processForm.js"></script>
 <script src="script.js"></script>
 </html>
