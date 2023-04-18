@@ -21,33 +21,33 @@
   <div class="w-2/3 m-auto sm:flex" id="contactForm">
     <form class="grid w-full p-4 my-2 "  id="formulario" autocomplete="off">
       
-        <label for="nombre">Nombre</label>
-        <input class="px-4 py-2 my-2" type="text" id="nombre" name="nombre" placeholder="Joe">
+        <label class="font-semibold" for="nombre">Nombre</label>
+        <input class="px-4 py-2 my-2 rounded-lg border border-black" type="text" id="nombre" name="nombre" placeholder="Joe">
         <p class="font-semibold text-red-500" id="error_nombre"></p>
 
-        <label for="apellido">Apellido</label>
-        <input class="px-4 py-2 my-2" type="text" id="apellido" placeholder="Doe">
+        <label class="font-semibold" for="apellido">Apellido</label>
+        <input class="px-4 py-2 my-2 rounded-lg border border-black" type="text" id="apellido" placeholder="Doe">
         <p class="font-semibold text-red-500" id="error_apellido"></p>
     
-        <label for="email">E-mail</label>
-        <input class="px-4 py-2" type="email" id="email" placeholder="Joe@Doe.com">
+        <label class="font-semibold" for="email">E-mail</label>
+        <input class="px-4 py-2 rounded-lg border border-black" type="email" id="email" placeholder="Joe@Doe.com">
         <p class="font-semibold text-red-500" id="error_email"></p>
 
-        <label for="direccion">Direccion</label>
-        <input class="px-4 py-2 my-2" type="text" id="direccion" placeholder="San Martin 123">
+        <label class="font-semibold" for="direccion">Direccion</label>
+        <input class="px-4 py-2 my-2 rounded-lg border border-black" type="text" id="direccion" placeholder="San Martin 123">
         <p class="font-semibold text-red-500" id="error_direccion"></p>
     
-        <label for="telefono">Telefono</label>
-        <input class="px-4 py-2 my-2" type="text" id="telefono" placeholder="0000000000">
+        <label class="font-semibold" for="telefono">Telefono</label>
+        <input class="px-4 py-2 my-2 rounded-lg border border-black" type="text" id="telefono" placeholder="0000000000">
         <p class="font-semibold text-red-500" id="error_telefono"></p>
     
-        <label for="consulta">Consulta</label>
-        <textarea class="px-4 py-2 my-2 resize-none h-fit" id="consulta" placeholder="Su consulta aqui"></textarea>
+        <label class="font-semibold" for="consulta">Consulta</label>
+        <textarea class="px-4 py-2 my-2 resize-none h-fit rounded-lg border border-black" id="consulta" placeholder="Su consulta aqui"></textarea>
         <p class="font-semibold text-red-500" id="error_consulta"></p>
     
         <button class="px-4 bg-[#056BF5]  p-3 rounded-lg text-white hover:bg-[#006DFE] w-1/2 m-auto" type="submit" id="enviar">Enviar</button>
     </form>
-    <img class="sm:w-1/2 " src="images/faqsImage.jpeg" alt="">
+    <img class="hidden md:block md:w-1/2  " src="images/faqsImage.jpeg" alt="">
   </div>
 
     <div class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center z-50 hidden">
@@ -78,30 +78,36 @@
       </div>
     </div>
 
-    <section class="w-2/3 bg-gray-900 m-auto sm:flex" id="processForm">
-      <form class="grid p-4 my-2 " id="form" autocomplete="off">
 
-        <label for="nombre">Nombre de su nueva página</label>
-        <input type="text" id="nombre-pagina" placeholder="www.mi-página.com.ar">
-        <p id="erroresPagina"></p>
 
-        <label for="cantidad">Cantidad de páginas</label>
-        <input type="number" id="cantidad" min="1" value="1">
-        <span id="precio-pagina">$5000</span>
+    <section class="bg-[#F7F7F7]" id="processForm">
+      <div class="w-2/3 m-auto sm:flex ">
+      <img class="hidden md:block md:w-1/2  " src="images/processImage.png" alt="">
 
-        <label for="form">Formulario de Contacto?</label>
-        <input type="checkbox" id="form" name="form" value="1">
-        <span id="precio_formulario">$2000</span>
-        <p>Si, tiene mas de una Página el Formulario no tiene costo</p>
-        <span id="total">Total $</span>
+      <form class="grid p-4 my-2 w-full" id="form" autocomplete="off">
 
-        <button type="submit" id="submit">Imprimir Presupuesto</button>
+        <label class="font-semibold" for="nombre">Nombre de su nueva página</label>
+        <input class="px-4 py-2 my-2 rounded-lg border border-black" type="text" id="nombre-pagina" placeholder="www.mi-página.com.ar">
+        <p  class="font-semibold text-red-500" id="erroresPagina"></p>
+
+        <label class="font-semibold" for="cantidad">Cantidad de páginas</label>
+        <input class="px-4 py-2 my-2 rounded-lg rounded-lg border border-black w-fit" type="number" id="cantidad" min="1" value="1">
+        <span class="text-end" id="precio-pagina">$5000</span>
+
+        <label class="font-semibold" for="form">Formulario de Contacto?</label>
+        <input class="justify-self-start w-16" type="checkbox" id="form" name="form" value="1">
+        <span  class="text-end" id="precio_formulario">$2000</span>
+        <p class="text-gray-400 text-end">Si, tiene mas de una Página el Formulario no tiene costo</p>
+        <span class="text-xl font-semibold text-end" id="total">Total $0000</span>
+
+        <button class="px-4 bg-amber-500  p-3 rounded-lg text-white hover:bg-amber-400 w-1/2 m-auto" type="submit" id="submit">Imprimir PDF</button>
       </form>
+    </div>
     </section>
 
 
 
-    <footer class="bg-blue-900 text-white h-20 text-center mt-4
+    <footer class="bg-blue-900 text-white h-20 text-center 
         <p class="text-center">Copyright</p>
     </footer>
 </body>
