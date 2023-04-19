@@ -45,3 +45,14 @@
     font-size: 30px;
     padding: 0.5em;
 }
+#contactanos{
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+    background-color: #1294eb;
+}
+#contactanos p{
+    color: white;
+    font-size: 30px;
+    padding: 0.5em;
+}
