@@ -43,16 +43,16 @@
 #presupuesto p{
     color: white;
     font-size: 30px;
-    padding: 0.5em;
+    padding: 1em;
 }
 #contactanos{
     display: flex;
     justify-content: center;
     margin-top: 3em;
-    background-color: #1294eb;
+    background-color: #01B0C7;
 }
 #contactanos p{
     color: white;
     font-size: 30px;
-    padding: 0.5em;
+    padding: 1em;
 }
