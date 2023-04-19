@@ -1,0 +1,47 @@
+*{
+    font-family: "Noto Sans", sans-serif;
+}
+
+#nosotros{
+    display: flex;
+    margin: 2em 20%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+
+#perfiles{
+    width: 200%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.perfil{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#presentacion p{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+#perfiles p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#presupuesto{
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+    background-color: #241084;
+}
+
+#presupuesto p{
+    color: white;
+    font-size: 30px;
+    padding: 0.5em;
+}
